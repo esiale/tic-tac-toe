@@ -1,0 +1,164 @@
+:root {
+    --grid-border: 0.2rem rgb(69, 82, 98, 0.6) solid;
+    --top: rgb(230, 204, 179);
+    --top-secondary: rgb(204, 151, 102, 0.2);
+    --primary: rgb(165, 185, 192);
+    --secondary: rgb(105, 137, 150, 0.2);
+    --mark: rgb(69, 82, 98, 0.4);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    height: 100vh;
+    width: 100wh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Panel */
+
+.overlay {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    align-items: center;
+    text-align: center;
+    background-color: var(--top);
+}
+
+.overlay p {
+    cursor: pointer;
+    transition: transform .1s;
+}
+
+.overlay p:hover {
+    transform: scale(1.5);
+}
+
+.panel {
+    position: relative;
+    display: grid;
+    height: 7rem;
+    width: 30rem;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas:
+        "panel-left panel-mid panel-right"
+        "panel-message panel-message panel-message";
+    font-size: 1.2rem;
+    font-family: 'Noto Serif', serif;
+    background-color: var(--top);
+    border-radius: 0.2rem;
+    border: 0.2rem solid var(--top-secondary);
+}
+
+.panel * {
+    width: 100%;
+}
+
+.panel img {
+    width: 1rem;
+    align-self: start;
+    margin: 0.3rem;
+}
+
+.panel-left {
+    display: flex;
+    grid-area: panel-left;
+    align-items: center;
+    text-align: left;
+}
+
+.panel-left div {
+    display: flex;
+    align-content: center;
+}
+
+.panel-mid {
+    display: flex;
+    grid-area: panel-mid;
+    align-items: center;
+}
+
+.panel-right {
+    display: flex;
+    grid-area: panel-right;
+    align-items: center;
+    text-align: right;
+}
+
+.panel-right div {
+    display: flex;
+    align-items: center;
+}
+
+.panel-message {
+    grid-area: panel-message;
+}
+
+/* Gameboard */
+
+.gameboard-container {
+    display: grid;
+    grid-template-columns: repeat(3, 33.3%);
+    grid-template-rows: repeat(3, 33.3%);
+    height: 30rem;
+    width: 30rem;
+    background-color: rgb(165, 185, 192);
+    border-radius: 0.2rem;
+    border: 0.2rem solid var(--secondary);
+    margin-top: 1rem;
+}
+
+.gameboard-container * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8rem;
+    color: var(--mark);
+}
+
+.top-left {
+    border-right: var(--grid-border);
+    border-bottom: var(--grid-border);
+}
+
+.top-mid {
+    border-bottom: var(--grid-border);
+}
+
+.top-right {
+    border-left: var(--grid-border);
+    border-bottom: var(--grid-border);
+}
+
+.mid-left {
+    border-right:  var(--grid-border);
+}
+
+.mid-right {
+    border-left: var(--grid-border);
+}
+
+.bot-left {
+    border-top: var(--grid-border);
+    border-right: var(--grid-border);
+}
+
+.bot-mid {
+    border-top: var(--grid-border);
+}
+
+.bot-right {
+    border-top: var(--grid-border);
+    border-left: var(--grid-border);
+}
