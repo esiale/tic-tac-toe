@@ -5,6 +5,7 @@
     --primary: rgb(165, 185, 192);
     --secondary: rgb(105, 137, 150, 0.2);
     --mark: rgb(69, 82, 98, 0.4);
+    --dark-gray: rgb(77, 77, 77);
 }
 
 * {
@@ -19,6 +20,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgb(255, 230, 204);
 }
 
 /* Panel */
@@ -32,6 +34,7 @@
     align-items: center;
     text-align: center;
     background-color: var(--top);
+    color: var(--dark-gray);
 }
 
 .overlay p {
@@ -49,12 +52,13 @@
     height: 7rem;
     width: 30rem;
     grid-template-columns: 2fr 1fr 2fr;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 52% 48%;
     grid-template-areas:
         "panel-left panel-mid panel-right"
         "panel-message panel-message panel-message";
     font-size: 1.2rem;
     font-family: 'Noto Serif', serif;
+    color: var(--dark-gray);
     background-color: var(--top);
     border-radius: 0.2rem;
     border: 0.2rem solid var(--top-secondary);
@@ -68,6 +72,7 @@
     width: 1rem;
     align-self: start;
     margin: 0.3rem;
+    cursor: pointer;
 }
 
 .panel-left {
@@ -75,6 +80,7 @@
     grid-area: panel-left;
     align-items: center;
     text-align: left;
+    word-break: break-all;
 }
 
 .panel-left div {
@@ -86,6 +92,8 @@
     display: flex;
     grid-area: panel-mid;
     align-items: center;
+    text-align: center;
+    cursor: pointer;
 }
 
 .panel-right {
@@ -93,6 +101,7 @@
     grid-area: panel-right;
     align-items: center;
     text-align: right;
+    word-break: break-all;
 }
 
 .panel-right div {
@@ -102,6 +111,21 @@
 
 .panel-message {
     grid-area: panel-message;
+    display: flex;
+}
+
+.panel-message-mid {
+    text-align: center;
+    align-self: center; 
+}
+
+.panel-mark-left, .panel-mark-right {
+    width: 20%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    color: var(--mark);
+    text-align: center;
+    justify-content: center;
 }
 
 /* Gameboard */

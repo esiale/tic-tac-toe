@@ -15,17 +15,21 @@
 <body>
 <div class="wrapper">
   <div class="panel">
-    <div class="overlay"><p>Press to start the game!</p></div>
+    <div class="overlay"><p id="start">Press to start the game!</p></div>
     <div class="panel-left">
-      <img src="../img/edit.svg"><p>Player 1</p>
+      <img src="../img/edit.svg" class="name-change"><p>Player 1</p>
     </div>
     <div class="panel-mid">
-      <p>Restart</p>
+      <p>Reset</p>
     </div>
     <div class="panel-right">
-      <p>Player 2</p><img src="../img/edit.svg">
+      <p>Player 2</p><img src="../img/edit.svg" class="name-change">
     </div>
-    <div class="panel-message"></div>
+    <div class="panel-message">
+      <div class="panel-mark-left">X</div>
+      <div class="panel-message-mid"></div>
+      <div class="panel-mark-right">O</div>
+    </div>
   </div>
   <div class="gameboard-container">
       <div class="top-left"></div>
